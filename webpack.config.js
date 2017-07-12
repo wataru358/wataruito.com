@@ -7,8 +7,7 @@ const VENDOR_LIBS = [
   'react', 'lodash', 'redux', 'react-redux', 'react-dom',
  'redux-thunk'
 ];
-
-module.exports = {
+const config = {
   entry: {
     bundle: './src/index.js',
     vendor: VENDOR_LIBS
@@ -64,6 +63,7 @@ module.exports = {
     new ExtractTextPlugin("main.css"),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+      // 'process.env.NODE_ENV': JSON.stringify('production')
     }),
     new webpack.optimize.CommonsChunkPlugin({
       names: ['vendor', 'manifest']
@@ -73,3 +73,24 @@ module.exports = {
     })
   ]
 };
+if (process.env.NODE_ENV === 'production') {
+
+    config.plugins.push(
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                screw_ie8: true
+            }
+        })
+    )
+} else {// @todo: hotreload or chunkhash, that is the question.
+    // actually we can do both
+
+    config.output = {
+      path: path.join(__dirname, 'dist'),
+      filename: '[name].js'
+    }
+    config.plugins.push(
+        new webpack.HotModuleReplacementPlugin()
+    );
+}
+module.exports = config;
