@@ -1,0 +1,36 @@
+.main {
+  width:100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  /*background-color: #fff;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  transition: background-color 5s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+}
+.row {
+  width: 100vw;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.cell {
+
+  color: #000;
+  overflow:'hidden';
+  display: 'flex';
+  justify-content: 'center';
+  align-items: 'center';
+}
+.line {
+  width:3px;
+  height: 2vw;
+  background-color:rgba(255,0,0,.75);
+  box-shadow: -2px -2px 0px 0px rgba(0,10,3,0.4);
+  /*transition: transform .3s*/
+}

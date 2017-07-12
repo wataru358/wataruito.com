@@ -1,0 +1,86 @@
+.main {
+  width:100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  /*background-color: #fff;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  /*transition: background-color 5s cubic-bezier(0.645, 0.045, 0.355, 1);*/
+  transition: background-color 5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.row {
+  width: 100vw;
+  overflow: visible;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.cell {
+
+  color: #000;
+  overflow:visible;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 3s linear;
+}
+
+
+/*
+.circle {
+    width: 2vw;
+    height: 2vw;
+    background-color: #f00;
+    border-radius: 1vw;
+}
+*/
+.heartWrapper {
+  opacity: .25;
+  animation-name: heatbeat;
+  animation-duration: .88s;
+  animation-iteration-count: infinite;
+}
+@keyframes heatbeat {
+    0% {transform:scale(1,1)}
+    50% {transform:scale(1.15,1.15)}
+    100% {transform:scale(1,1)}
+}
+/*
+  thanks to: https://css-tricks.com/hearts-in-html-and-css/
+*/
+.heart {
+  background-color: red;
+  display: inline-block;
+  height: 2vw;
+  width: 2vw;
+  margin: 0 0.666vw;
+  position: relative;
+  top: 0;
+  transform: rotate(-45deg);
+
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  background-color: red;
+  border-radius: 50%;
+  height: 2vw;
+  position: absolute;
+  width: 2vw;
+}
+
+.heart:before {
+  top: -1vw;
+  left: 0;
+}
+
+.heart:after {
+  left: 1vw;
+  top: 0;
+}
