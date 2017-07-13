@@ -8,3 +8,41 @@
   top: 0;
   left: 0;
 }
+.navHolder {
+  position: relative;
+}
+
+.topNav {
+  width: 18vh;
+  height: 18vh;
+
+  cursor: pointer;
+
+  font-size: 18vh;
+  color: rgba(255, 255, 255, 1);
+
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.71);
+
+  display: flex;
+  justify-content: center;
+
+  position: absolute;
+  top:50%;
+  margin-top: -9vh;
+
+  opacity: 0;
+
+  transition: opacity .5s ease-in-out;
+   -moz-transition: opacity .5s ease-in-out;
+   -webkit-transition: opacity .5s ease-in-out;
+}
+.topNav:hover {
+  opacity: .9 !important;
+}
+.topNav.topNavRight {
+  right:0;
+}
+
+.topNav.topNavLeft {
+  left:0;
+}
