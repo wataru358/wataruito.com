@@ -5,7 +5,6 @@ import CellAutomataRotate from '../art/CellAutomataRotate';
 import CellAutomataOrg from '../art/CellAutomataOrg';
 import CellAutomataHeart from '../art/CellAutomataHeart';
 
-
 const compArray = [
   (i)=>(<div key={i} className={styles.enterAnimation + ' ' + styles.animationWrapper}><CellAutomataRotate /></div>),
   (i)=>(<div key={i} className={styles.enterAnimation + ' ' + styles.animationWrapper}><CellAutomataOrg /></div>),
