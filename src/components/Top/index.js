@@ -7,9 +7,9 @@ import CellAutomataHeart from '../art/CellAutomataHeart';
 
 
 const compArray = [
-  ()=>(<CellAutomataRotate />),
-  ()=>(<CellAutomataOrg />),
-  ()=>(<CellAutomataHeart />)
+  (i)=>(<div key={i} className={styles.enterAnimation + ' ' + styles.animationWrapper}><CellAutomataRotate /></div>),
+  (i)=>(<div key={i} className={styles.enterAnimation + ' ' + styles.animationWrapper}><CellAutomataOrg /></div>),
+  (i)=>(<div key={i} className={styles.enterAnimation + ' ' + styles.animationWrapper}><CellAutomataHeart /></div>)
 ];
 
 class Top extends Component {
@@ -93,9 +93,12 @@ class Top extends Component {
         onMouseMove={this.showNavButtons.bind(this)}
         >
         <div className={styles.navHolder}>
-          {
-            this.state.compArray[this.state.display]()
-          }
+
+
+            {
+              this.state.compArray[this.state.display](this.state.display)
+            }
+
           <div className={styles.topNav +' '+ styles.topNavRight}
             onClick={this.displayNextArt.bind(this)}
             data-disabled={
