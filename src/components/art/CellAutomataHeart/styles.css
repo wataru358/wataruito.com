@@ -56,8 +56,8 @@
 .heart {
   background-color: red;
   display: inline-block;
-  height: 2vw;
-  width: 2vw;
+  height: 3vw;
+  width: 3vw;
   margin: 0 0.666vw;
   position: relative;
   top: 0;
@@ -70,17 +70,17 @@
   content: "";
   background-color: red;
   border-radius: 50%;
-  height: 2vw;
+  height: 3vw;
   position: absolute;
-  width: 2vw;
+  width: 3vw;
 }
 
 .heart:before {
-  top: -1vw;
+  top: -1.5vw;
   left: 0;
 }
 
 .heart:after {
-  left: 1vw;
+  left: 1.5vw;
   top: 0;
 }

@@ -229,6 +229,11 @@ class CellAutomataRotate extends Component {
     this.updateBackgroundColor();
     this.setIntervalBGID = setInterval(this.updateBackgroundColor.bind(this),5000);
   }
+  componentWillUnmount() {
+    // clean up after yourself ;)
+    clearInterval(this.setIntervalID);
+    clearInterval(this.setIntervalBGID);
+  }
   // jsx renderer
   cell(cell, cellIndex, rowIndex) {
     return (

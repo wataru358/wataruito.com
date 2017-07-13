@@ -198,6 +198,11 @@ class CellAutomataOrg extends Component {
     // debug
     //this.intervalID = setTimeout(this.update.bind(this), 1000/30);
   }
+  componentWillUnmount() {
+    // clean up after yourself ;)
+    clearInterval(this.intervalID);
+    clearInterval(this.setIntervalStripeBGID);
+  }
   update() {
     this.cell = this.cellList.first;
 		while (this.cell != null) {

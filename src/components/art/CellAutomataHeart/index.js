@@ -49,8 +49,10 @@ class CellAutomataHeart extends Component {
 
     if(orientation === 'landscape') {
 
-      columns = 38;
-      rows = 28;
+      //columns = 38;
+      //rows = 28;
+      columns = 19;
+      rows = 14;
 
       // just getting baseSize which is slightly smaller than
       // the exact number we can get by 100 / columns
@@ -59,8 +61,10 @@ class CellAutomataHeart extends Component {
 
     } else {
 
-      columns = 28;
-      rows = 38;
+      //columns = 28;
+      //rows = 38;
+      columns = 14;
+      rows = 19;
 
       baseSize = (Math.floor( (100 / rows) * 10 ) / 10).toString() + 'vh';
     }
@@ -230,6 +234,12 @@ class CellAutomataHeart extends Component {
     this.setIntervalID = setInterval(this.update.bind(this),3000);
     this.updateBackgroundColor();
     this.setIntervalBGID = setInterval(this.updateBackgroundColor.bind(this),5000);
+  }
+
+  componentWillUnmount() {
+    // clean up after yourself ;)
+    clearInterval(this.setIntervalID);
+    clearInterval(this.setIntervalBGID);
   }
   // jsx renderer
   cell(cell, cellIndex, rowIndex) {

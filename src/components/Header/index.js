@@ -9,7 +9,7 @@ const Header = () => (
       <Link className={styles.logoClink} to="/">
         <span className={styles.logoC}></span>
       </Link>
-      <a className={styles.link} href="https://github.com/wataru358" target="_blank">
+      <a className={styles.link} href="https://github.com/wataru358/wataruito.com" target="_blank">
         <i className="fa fa-github" aria-hidden></i>
       </a>
       <a className={styles.link} href="https://twitter.com/_wataruito" target="_blank">
