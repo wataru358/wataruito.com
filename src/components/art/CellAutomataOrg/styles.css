@@ -1,0 +1,46 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+
+  letter-spacing: -0.41em; /* webkit */
+}
+.main  * {
+  letter-spacing: normal;
+}
+.surface {
+  width: 50vw;
+  height: 100vh;
+
+  display: inline-block;
+
+}
+
+.surfaceTwo {
+  /*-webkit-transform: 'scale(-1, 1)';
+      -ms-transform: 'scale(-1, 1)';
+          transform: 'scale(-1, 1)';
+  -webkit-filter: 'FlipH';
+          filter: 'FlipH';*/
+}
+.stripeWrapper {
+  width: 1vw;
+  height: 100vh;
+  background-color: #000;
+  position: absolute;
+  top:0;
+  left: 50%;
+  margin-left: -0.5vw;
+  z-index: 999;
+}
+.stripe {
+  width: 1vw;
+  height: 100vh;
+  background-color: rgba(0,0,30,1);
+  border-right:1px solid rgba(255,66,66,0.75);
+
+
+
+  transition: background-color 4.3333s ease;
+
+}
