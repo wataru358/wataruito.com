@@ -5,8 +5,11 @@ import CellAutomataRotate from '../art/CellAutomataRotate';
 import CellAutomataOrg from '../art/CellAutomataOrg';
 import CellAutomataHeart from '../art/CellAutomataHeart';
 import LinesPerspective from '../art/LinesPerspective';
+import TextClip from '../art/TextClip';
+
 
 const compArray = [
+  (i)=>(<div key={i} className={styles.enterAnimation + ' ' + styles.animationWrapper}><TextClip /></div>),
   (i)=>(<div key={i} className={styles.enterAnimation + ' ' + styles.animationWrapper}><CellAutomataRotate /></div>),
   (i)=>(<div key={i} className={styles.enterAnimation + ' ' + styles.animationWrapper}><CellAutomataOrg /></div>),
   (i)=>(<div key={i} className={styles.enterAnimation + ' ' + styles.animationWrapper}><CellAutomataHeart /></div>),

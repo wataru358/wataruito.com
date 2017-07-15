@@ -27,7 +27,7 @@ cy: cs.height / 2,
 
 class DrawOneLine {
   constructor(config,ctx) {
-    this.config = config;
+    this.config = {...config};
     this.deg = randomNum(359, 0);
     this.ctx = ctx;
   }
