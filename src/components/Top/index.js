@@ -4,11 +4,13 @@ import styles from './styles.css';
 import CellAutomataRotate from '../art/CellAutomataRotate';
 import CellAutomataOrg from '../art/CellAutomataOrg';
 import CellAutomataHeart from '../art/CellAutomataHeart';
+import LinesPerspective from '../art/LinesPerspective';
 
 const compArray = [
   (i)=>(<div key={i} className={styles.enterAnimation + ' ' + styles.animationWrapper}><CellAutomataRotate /></div>),
   (i)=>(<div key={i} className={styles.enterAnimation + ' ' + styles.animationWrapper}><CellAutomataOrg /></div>),
-  (i)=>(<div key={i} className={styles.enterAnimation + ' ' + styles.animationWrapper}><CellAutomataHeart /></div>)
+  (i)=>(<div key={i} className={styles.enterAnimation + ' ' + styles.animationWrapper}><CellAutomataHeart /></div>),
+  (i)=>(<div key={i} className={styles.enterAnimation + ' ' + styles.animationWrapper}><LinesPerspective /></div>)
 ];
 
 class Top extends Component {

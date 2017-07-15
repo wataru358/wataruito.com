@@ -1,0 +1,25 @@
+.myCanvas {
+  width: 100vw;
+  height: 100vh;
+}
+.wrapper {
+  position: relative;
+}
+.text {
+  width: 33vw;
+  height: 33vw;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 78px;
+  font-weight: bolder;
+  letter-spacing: -.05em;
+
+  position: absolute;
+  top: 50%;
+  left: 33.3333vw;
+  margin-top:-16.5vw;
+  font-family: 'Roboto', sans-serif;
+}
