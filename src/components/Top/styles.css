@@ -29,6 +29,7 @@
   position: absolute;
   top:50%;
   margin-top: -9vh;
+  z-index: 999999;
 
   opacity: 0;
 

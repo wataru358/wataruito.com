@@ -29,24 +29,71 @@
 
     position: relative;
     z-index: 999;
+
 }
+
+.textClip {
+  display: inline-block;
+  color: purple;
+   -webkit-text-fill-color: transparent;
+   background: -webkit-linear-gradient(transparent, transparent),
+               repeat;
+   background: -o-linear-gradient(transparent, transparent);
+   -webkit-background-clip: text;
+
+   opacity: 0.4;
+
+   animation-name: textClipMove;
+   animation-duration: 95s;
+   animation-iteration-count: infinite;
+   animation-direction: alternate;
+}
+
+@keyframes textClipMove {
+  0% {background-position: 0 0;}
+  100% {background-position: -700px -700px}
+}
+
+
 .bgHolderTwo {
   width: 100vw;
   height: 1000vh;
+
+  opacity: .0;
 
   position: absolute;
   z-index: 2;
   top:0;
   left:0;
 
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00ead7+0,008de5+14,6373ed+27,a961e8+36,ff3b00+47,ff9d00+55,f4f116+62,16f4de+72,60f416+83,aeff00+89,00e89e+100 */
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00ead7+0,5bffe6+13,ffe69e+29,ff3b00+43,ff9d00+51,f4f116+62,16f4de+72,60f416+91,e1ff00+100 */
   background: rgb(0,234,215); /* Old browsers */
-  background: -moz-linear-gradient(left, rgba(0,234,215,1) 0%, rgba(0,141,229,1) 14%, rgba(99,115,237,1) 27%, rgba(169,97,232,1) 36%, rgba(255,59,0,1) 47%, rgba(255,157,0,1) 55%, rgba(244,241,22,1) 62%, rgba(22,244,222,1) 72%, rgba(96,244,22,1) 83%, rgba(174,255,0,1) 89%, rgba(0,232,158,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, rgba(0,234,215,1) 0%,rgba(0,141,229,1) 14%,rgba(99,115,237,1) 27%,rgba(169,97,232,1) 36%,rgba(255,59,0,1) 47%,rgba(255,157,0,1) 55%,rgba(244,241,22,1) 62%,rgba(22,244,222,1) 72%,rgba(96,244,22,1) 83%,rgba(174,255,0,1) 89%,rgba(0,232,158,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, rgba(0,234,215,1) 0%,rgba(0,141,229,1) 14%,rgba(99,115,237,1) 27%,rgba(169,97,232,1) 36%,rgba(255,59,0,1) 47%,rgba(255,157,0,1) 55%,rgba(244,241,22,1) 62%,rgba(22,244,222,1) 72%,rgba(96,244,22,1) 83%,rgba(174,255,0,1) 89%,rgba(0,232,158,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ead7', endColorstr='#00e89e',GradientType=1 ); /* IE6-9 */
+  background: -moz-linear-gradient(left, rgba(0,234,215,1) 0%, rgba(91,255,230,1) 13%, rgba(255,230,158,1) 29%, rgba(255,59,0,1) 43%, rgba(255,157,0,1) 51%, rgba(244,241,22,1) 62%, rgba(22,244,222,1) 72%, rgba(96,244,22,1) 91%, rgba(225,255,0,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(0,234,215,1) 0%,rgba(91,255,230,1) 13%,rgba(255,230,158,1) 29%,rgba(255,59,0,1) 43%,rgba(255,157,0,1) 51%,rgba(244,241,22,1) 62%,rgba(22,244,222,1) 72%,rgba(96,244,22,1) 91%,rgba(225,255,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(0,234,215,1) 0%,rgba(91,255,230,1) 13%,rgba(255,230,158,1) 29%,rgba(255,59,0,1) 43%,rgba(255,157,0,1) 51%,rgba(244,241,22,1) 62%,rgba(22,244,222,1) 72%,rgba(96,244,22,1) 91%,rgba(225,255,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ead7', endColorstr='#e1ff00',GradientType=1 ); /* IE6-9 */
+
+  animation-name: bgMoveTwo;
+  animation-duration: 80s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 
 }
+
+@keyframes bgMoveTwo {
+    0% {top:0;opacity:0}
+    10% {opacity: .01}
+    20% {opacity: .023}
+    30% {opacity: .005}
+    40% {opacity: .008}
+    50% {opacity: .012}
+    60% {opacity: .02}
+    70% {opacity: .003}
+    80% {opacity: .008}
+    90% {opacity: .022}
+    100% {top:-900vh;opacity:.033}
+}
+
 .bgHolderOne {
   width: 1000vw;
   height: 100vh;
@@ -64,14 +111,14 @@ background: linear-gradient(to right, rgba(0,234,215,1) 0%,rgba(0,189,232,1) 11%
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ead7', endColorstr='#00ead7',GradientType=1 ); /* IE6-9 */
 
 animation-name: bgMoveOne;
-animation-duration: 20s;
+animation-duration: 30s;
 animation-iteration-count: infinite;
 
 }
 
 @keyframes bgMoveOne {
     0% {left:0}
-    50% {left:-900vh}
+    50% {left:-900vw}
     100% {left:0}
 }
 
