@@ -14,7 +14,7 @@ const config = {
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '/[name].[chunkhash].js',
+    filename: '[name].[chunkhash].js',
     //@todo: check the config documentation
     publicPath:'/'
   },
