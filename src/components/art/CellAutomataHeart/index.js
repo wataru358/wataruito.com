@@ -291,7 +291,7 @@ class CellAutomataHeart extends Component {
   }
   render() {
     return (
-      <div className={styles.main} style={{backgroundColor:this.state.backgroundColor}}>
+      <div className={styles.main + ' enterAnimation'} style={{backgroundColor:this.state.backgroundColor}}>
         {
           this.state.cellArray.map((row, rowIndex) => this.row(row,rowIndex)/*{
             <div className={styles.row} key={rowIndex}>

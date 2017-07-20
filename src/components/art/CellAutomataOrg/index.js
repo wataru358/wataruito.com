@@ -327,7 +327,7 @@ class CellAutomataOrg extends Component {
   }
   render() {
     return (
-      <div className={styles.main}>
+      <div className={styles.main + ' enterAnimation'}>
         <canvas
           className={styles.surface}
           ref={(elm) => { this.surfaceOne = elm; }}

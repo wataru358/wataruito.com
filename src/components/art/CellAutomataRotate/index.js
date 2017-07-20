@@ -224,12 +224,14 @@ class CellAutomataRotate extends Component {
     //console.log(this.state);
   }
   componentDidMount() {
+
     this.update();
     this.setIntervalID = setInterval(this.update.bind(this),1000/30);
     this.updateBackgroundColor();
     this.setIntervalBGID = setInterval(this.updateBackgroundColor.bind(this),5000);
   }
   componentWillUnmount() {
+
     // clean up after yourself ;)
     clearInterval(this.setIntervalID);
     clearInterval(this.setIntervalBGID);
@@ -283,7 +285,7 @@ class CellAutomataRotate extends Component {
   }
   render() {
     return (
-      <div className={styles.main} style={{backgroundColor:this.state.backgroundColor}}>
+      <div className={styles.main + ' enterAnimation'} style={{backgroundColor:this.state.backgroundColor}}>
         {
           this.state.cellArray.map((row, rowIndex) => this.row(row,rowIndex)/*{
             <div className={styles.row} key={rowIndex}>

@@ -30,7 +30,7 @@ class LinesPerspective extends Component {
   // then set styles as well
   render() {
     return (
-      <div className={styles.wrapper}>
+      <div className={styles.wrapper + ' enterAnimation'}>
 
         <canvas
           ref={(canvas) => { this.canvas = canvas; }}

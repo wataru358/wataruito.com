@@ -14,7 +14,9 @@ const config = {
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name].[chunkhash].js'
+    filename: '/[name].[chunkhash].js',
+    //@todo: check the config documentation
+    publicPath:'/'
   },
   module: {
     rules: [
@@ -59,6 +61,11 @@ const config = {
 
     ]
   },
+  devServer: {
+    inline: true,
+    historyApiFallback: true,
+    contentBase:'.'
+  },
   plugins: [
     new ExtractTextPlugin("main.css"),
     new webpack.DefinePlugin({
@@ -87,10 +94,14 @@ if (process.env.NODE_ENV === 'production') {
 
     config.output = {
       path: path.join(__dirname, 'dist'),
-      filename: '[name].js'
+      filename: '[name].js',
+      publicPath:'/'
     }
     config.plugins.push(
         new webpack.HotModuleReplacementPlugin()
     );
+
+
+
 }
 module.exports = config;

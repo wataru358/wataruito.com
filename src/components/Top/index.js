@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import styles from './styles.css';
+import { Link } from 'react-router';
 
-import CellAutomataRotate from '../art/CellAutomataRotate';
+/*import CellAutomataRotate from '../art/CellAutomataRotate';
 import CellAutomataOrg from '../art/CellAutomataOrg';
 import CellAutomataHeart from '../art/CellAutomataHeart';
 import LinesPerspective from '../art/LinesPerspective';
 import TextClip from '../art/TextClip';
-
-
+*/
+/*
 const compArray = [
   (i)=>(<div key={i} className={styles.enterAnimation + ' ' + styles.animationWrapper}><TextClip /></div>),
   (i)=>(<div key={i} className={styles.enterAnimation + ' ' + styles.animationWrapper}><CellAutomataRotate /></div>),
@@ -15,18 +16,28 @@ const compArray = [
   (i)=>(<div key={i} className={styles.enterAnimation + ' ' + styles.animationWrapper}><CellAutomataHeart /></div>),
   (i)=>(<div key={i} className={styles.enterAnimation + ' ' + styles.animationWrapper}><LinesPerspective /></div>)
 ];
+*/
+const routeMap = [
+  '/art/CellAutomataRotate',
+  '/art/CellAutomataOrg',
+  '/art/CellAutomataHeart',
+  '/art/LinesPerspective',
+  '/art/TextClip'
+  ]
 
 class Top extends Component {
   constructor(props) {
     super(props);
+    //console.log('Top.props: ',this.props);
+    //console.log(routeMap);
     this.state = {
       display:0,
-      compArray,
+      //compArray,
+      routeMap,
       rightOpacity:0,
       leftOpacity:0,
       rightDisabled:false,
       leftDisabled:true,
-
     }
 
     this.navOpacityOn = .65
@@ -49,13 +60,13 @@ class Top extends Component {
       leftOpacity:0
     });
   }
-  displayNextArt() {
+  updateDisplayFowward() {
     // just precaution
     // should work only when button's opacity is more than 0
     // as I opted out to put the button there anyway for better CSS animation
 
     let update = { }
-    if(this.state.display + 1 < this.state.compArray.length) {
+    if(this.state.display + 1 < this.state.routeMap.length) {
       update = {
         display:this.state.display + 1
       }
@@ -79,7 +90,7 @@ class Top extends Component {
 
     this.setState(update);
   }
-  displayPrevArt() {
+  updateDisplayBackword() {
 
     let update = {}
     if(this.state.display - 1 >= 0) {
@@ -96,17 +107,22 @@ class Top extends Component {
       <div className={styles.artContainer}
         onMouseMove={this.showNavButtons.bind(this)}
         >
+
         <div className={styles.navHolder}>
 
 
-            {
-              this.state.compArray[this.state.display](this.state.display)
+            { // old way
+              // this.state.compArray[this.state.display](this.state.display)
+              this.props.children
             }
 
-          <div className={styles.topNav +' '+ styles.topNavRight}
-            onClick={this.displayNextArt.bind(this)}
+          <Link className={styles.topNav +' '+ styles.topNavRight}
+            to={
+              this.state.routeMap[this.state.display + 1]
+            }
+            onClick={this.updateDisplayFowward.bind(this)}
             data-disabled={
-              this.state.display + 1 >= this.state.compArray.length ? true : false
+              this.state.display + 1 >= this.state.routeMap.length ? true : false
             }
             style={
               {
@@ -114,10 +130,13 @@ class Top extends Component {
               }
             }>
             <i className={'fa fa-arrow-circle-right'}></i>
-          </div>
+          </Link>
 
-          <div className={styles.topNav +' '+ styles.topNavLeft}
-            onClick={this.displayPrevArt.bind(this)}
+          <Link className={styles.topNav +' '+ styles.topNavLeft}
+            to={
+              this.state.display === 1 ? '/' : this.state.routeMap[this.state.display - 1]
+            }
+            onClick={this.updateDisplayBackword.bind(this)}
             data-disabled={
               0 === this.state.display ? true : false
             }
@@ -129,9 +148,10 @@ class Top extends Component {
             >
 
             <i className={'fa fa-arrow-circle-left'}></i>
-          </div>
+          </Link>
 
         </div>
+
       </div>
     );
   }

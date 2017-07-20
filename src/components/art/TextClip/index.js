@@ -26,7 +26,7 @@ class TextClip extends Component {
   }
   render() {
     return (
-      <div className={styles.wrapper}>
+      <div className={styles.wrapper + ' enterAnimation'}>
         <div className={styles.textWrapper}>
           <a
             className={styles.quotes +' '+ styles.textClip}
