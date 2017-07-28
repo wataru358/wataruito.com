@@ -1,0 +1,82 @@
+.main {
+  width:100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  transition: background-color 5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.row {
+  width: 100vw;
+  overflow: visible;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.cell {
+
+  color: #000;
+  overflow: visible;
+  /*display: flex;
+
+  justify-content: center;*/
+  /*-webkit-transition: transform 3s linear;
+  transition: transform 3s linear;*/
+
+  /*-webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;*/
+
+
+
+  position: relative;
+
+}
+
+:global .cellAnime {
+    animation-name: rev;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+:global @keyframes rev {
+  100% { transform: rotate(360deg); }
+}
+
+.orbit {
+
+  width: 90%;
+  height: 90%;
+
+  border-radius: 48%;
+  border:1px solid rgba(0,0,0,.1);
+  position: absolute;
+  top:5%;
+  left:5%;
+
+  z-index: 65;
+
+}
+
+.dot {
+
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+
+  background-color: #f00;
+
+  margin-top: 8px;
+
+  position: relative;
+  z-index: 68;
+
+}

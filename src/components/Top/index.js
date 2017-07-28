@@ -22,7 +22,8 @@ const routeMap = [
   '/art/CellAutomataOrg',
   '/art/CellAutomataHeart',
   '/art/LinesPerspective',
-  '/art/TextClip'
+  '/art/TextClip',
+  '/art/CellAutomataRev'
   ]
 
 class Top extends Component {
