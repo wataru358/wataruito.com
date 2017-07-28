@@ -38,14 +38,14 @@ const componentRoutes = {
         System.import('./components/art/TextClip')
           .then(module => cb(null, module.default));
       }
-    }/*,
+    },
     {
       path:'art/CellAutomataRev',
       getComponent(location, cb) {
         System.import('./components/art/CellAutomataRev')
           .then(module => cb(null, module.default));
       }
-    }*/
+    }
   ]
 };
 
